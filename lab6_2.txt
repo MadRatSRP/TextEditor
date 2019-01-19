@@ -1,0 +1,26 @@
+    SensorManager sm;
+    List<Sensor> sensor;
+    ListView lv;
+
+    public static MainScreen newInstance() {
+
+        Bundle args = new Bundle();
+        MainScreen fragment = new MainScreen();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public MainScreen() { }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(R.string.main_screen);
+        View view = inflater.inflate(R.layout.main_screen, container, false);
+        sm = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        lv = view.findViewById(R.id.sensors_list);
+        sensor = sm.getSensorList(Sensor.TYPE_ALL);
+        lv.setAdapter(new ArrayAdapter<Sensor>(getActivity().getApplicationContext(),
+                android.R.layout.simple_list_item_1, sensor));
+        return view;
+    }
