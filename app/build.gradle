@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     defaultConfig {
         applicationId "com.madrat.texteditor"
         minSdkVersion 23
-        targetSdkVersion 28
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -24,20 +24,53 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
-    implementation 'com.google.android.material:material:1.1.0-alpha02'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'com.jakewharton:butterknife:9.0.0-rc2'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:9.0.0-rc2'
 
-    //preferences
-    implementation 'androidx.preference:preference:1.1.0-alpha02'
+    // AppCompat
+    def version_appcompat = '1.2.0-alpha01'
+    // Material
+    def version_material = '1.2.0-alpha03'
+    // Constraint Layout
+    def version_constraint_layout = '2.0.0-beta4'
+    // Legacy Support
+    def version_legacy_support = "1.0.0"
+    // ButterKnife
+    def version_butter_knife = '10.2.1'
+    // DBFlow
+    def version_db_flow = "5.0.0-alpha1"
+    // Preferences
+    def version_preferences = '1.1.0'
 
-    annotationProcessor "com.github.agrosner.dbflow:processor:5.0.0-alpha1"
-    implementation "com.github.agrosner.dbflow:core:5.0.0-alpha1"
-    implementation "com.github.agrosner.dbflow:lib:5.0.0-alpha1"
+    // Testing
+    // Junit
+    def version_junit = "4.12"
+    // Runner
+    def version_runner = '1.2.0'
+    // Espresso
+    def version_espresso = '3.2.0'
+
+    // AppCompat
+    implementation "androidx.appcompat:appcompat:$version_appcompat"
+    // Material
+    implementation "com.google.android.material:material:$version_material"
+    // Constraint Layout
+    implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+    // Legacy Support
+    implementation "androidx.legacy:legacy-support-v4:$version_legacy_support"
+    // ButterKnife
+    implementation "com.jakewharton:butterknife:$version_butter_knife"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$version_butter_knife"
+    // DBFlow
+    annotationProcessor "com.github.agrosner.dbflow:processor:$version_db_flow"
+    implementation "com.github.agrosner.dbflow:core:$version_db_flow"
+    implementation "com.github.agrosner.dbflow:lib:$version_db_flow"
+    // Preferences
+    implementation "androidx.preference:preference:$version_preferences"
+
+    // Testing
+    // Junit
+    testImplementation "junit:junit:$version_junit"
+    // Runner
+    androidTestImplementation "androidx.test:runner:$version_runner"
+    // Espresso
+    androidTestImplementation "androidx.test.espresso:espresso-core:$version_espresso"
 }
