@@ -2,7 +2,7 @@
 
 buildscript {
     // Gradle
-    def version_gradle = '3.5.3'
+    def version_gradle = '3.6.2'
 
     repositories {
         google()

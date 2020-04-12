@@ -20,57 +20,55 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    viewBinding {
+        enabled = true
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 
     // AppCompat
-    def version_appcompat = '1.2.0-alpha01'
+    def app_compat = '1.2.0-beta01'
     // Material
-    def version_material = '1.2.0-alpha03'
+    def material = '1.2.0-alpha05'
     // Constraint Layout
-    def version_constraint_layout = '2.0.0-beta4'
+    def constraint_layout = '2.0.0-beta4'
     // Legacy Support
-    def version_legacy_support = "1.0.0"
-    // ButterKnife
-    def version_butter_knife = '10.2.1'
+    def legacy_support = "1.0.0"
     // DBFlow
-    def version_db_flow = "5.0.0-alpha1"
+    def db_flow = "5.0.0-alpha1"
     // Preferences
-    def version_preferences = '1.1.0'
+    def preferences = '1.1.0'
 
     // Testing
     // Junit
-    def version_junit = "4.12"
-    // Runner
-    def version_runner = '1.2.0'
+    def junit = '4.13'
+    // Junit Runner
+    def junit_runner = '1.2.0'
     // Espresso
-    def version_espresso = '3.2.0'
+    def espresso = '3.2.0'
 
     // AppCompat
-    implementation "androidx.appcompat:appcompat:$version_appcompat"
+    implementation "androidx.appcompat:appcompat:$app_compat"
     // Material
-    implementation "com.google.android.material:material:$version_material"
+    implementation "com.google.android.material:material:$material"
     // Constraint Layout
-    implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout"
     // Legacy Support
-    implementation "androidx.legacy:legacy-support-v4:$version_legacy_support"
-    // ButterKnife
-    implementation "com.jakewharton:butterknife:$version_butter_knife"
-    annotationProcessor "com.jakewharton:butterknife-compiler:$version_butter_knife"
+    implementation "androidx.legacy:legacy-support-v4:$legacy_support"
     // DBFlow
-    annotationProcessor "com.github.agrosner.dbflow:processor:$version_db_flow"
-    implementation "com.github.agrosner.dbflow:core:$version_db_flow"
-    implementation "com.github.agrosner.dbflow:lib:$version_db_flow"
+    annotationProcessor "com.github.agrosner.dbflow:processor:$db_flow"
+    implementation "com.github.agrosner.dbflow:core:$db_flow"
+    implementation "com.github.agrosner.dbflow:lib:$db_flow"
     // Preferences
-    implementation "androidx.preference:preference:$version_preferences"
+    implementation "androidx.preference:preference:$preferences"
 
     // Testing
     // Junit
-    testImplementation "junit:junit:$version_junit"
-    // Runner
-    androidTestImplementation "androidx.test:runner:$version_runner"
+    testImplementation "junit:junit:$junit"
+    // Junit Runner
+    androidTestImplementation "androidx.test:runner:$junit_runner"
     // Espresso
-    androidTestImplementation "androidx.test.espresso:espresso-core:$version_espresso"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 }
