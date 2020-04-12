@@ -1,21 +1,20 @@
 package com.madrat.texteditor.Toolbars;
 
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
-import androidx.appcompat.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.madrat.texteditor.R;
+import androidx.fragment.app.Fragment;
 
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.madrat.texteditor.R;
+import com.madrat.texteditor.databinding.ToolbarFontBinding;
+
+import org.jetbrains.annotations.NotNull;
 
 public class FontToolbar extends Fragment {
 
-    @BindView(R.id.font_toolbar)
-    Toolbar font_toolbar;
+    private ToolbarFontBinding binding;
 
     public FontToolbar() { }
 
@@ -28,17 +27,21 @@ public class FontToolbar extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View font_view = inflater.inflate(R.layout.toolbar_font, container, false);
-        ButterKnife.bind(this, font_view);
-        return font_view;
+        binding = ToolbarFontBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        font_toolbar.setVisibility(View.VISIBLE);
-        font_toolbar.inflateMenu(R.menu.font_items);
+
+        binding.toolbar.setVisibility(View.VISIBLE);
+        binding.toolbar.inflateMenu(R.menu.font_items);
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }
