@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
+import com.madrat.texteditor.databinding.ActivityExampleBinding;
+
 public class ExampleActivity extends AppCompatActivity {
     final String LOG_TAG = "myLogs";
 
@@ -20,10 +22,15 @@ public class ExampleActivity extends AppCompatActivity {
     final String NOTES_NAME = "name";
     final String NOTES_VALUE = "value";
 
+    private ActivityExampleBinding binding;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_example);
+
+        binding = ActivityExampleBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
 
         Cursor cursor = getContentResolver().query(NOTES_URI, null, null,
                 null, null);
@@ -34,8 +41,7 @@ public class ExampleActivity extends AppCompatActivity {
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
                 android.R.layout.simple_list_item_2, cursor, from, to);
 
-        ListView lvContact = (ListView) findViewById(R.id.lvContact);
-        lvContact.setAdapter(adapter);
+        binding.contactListView.setAdapter(adapter);
     }
 
     public void onClickInsert(View v) {

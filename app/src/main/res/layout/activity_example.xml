@@ -8,28 +8,28 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
-            android:id="@+id/btnInsert"
+            android:id="@+id/insert_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickInsert"
             android:text="@string/insert">
         </Button>
         <Button
-            android:id="@+id/btnUpdate"
+            android:id="@+id/update_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickUpdate"
             android:text="@string/update">
         </Button>
         <Button
-            android:id="@+id/btnDelete"
+            android:id="@+id/delete_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickDelete"
             android:text="@string/delete">
         </Button>
         <Button
-            android:id="@+id/btnError"
+            android:id="@+id/error_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClickError"
@@ -37,7 +37,7 @@
         </Button>
     </LinearLayout>
     <ListView
-        android:id="@+id/lvContact"
+        android:id="@+id/contact_list_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     </ListView>
