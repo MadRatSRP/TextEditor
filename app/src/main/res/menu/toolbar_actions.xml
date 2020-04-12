@@ -34,7 +34,7 @@
                     android:icon="@drawable/ic_redo_black_24dp"
                     app:showAsAction="ifRoom"/>
                 <item
-                    android:id="@+id/action_font_options"
+                    android:id="@+id/action_show_font_options"
                     android:title="@string/action_font_options"
                     android:icon="@drawable/ic_font_download_black_24dp"
                     android:checkable="true"
@@ -52,12 +52,12 @@
                     android:checkable="true"
                     app:showAsAction="ifRoom"/>
                 <item
-                    android:id="@+id/action_zoom_plus"
+                    android:id="@+id/action_zoom_in"
                     android:title="@string/action_zoom_plus"
                     android:icon="@drawable/ic_zoom_in_black_24dp"
                     app:showAsAction="ifRoom"/>
                 <item
-                    android:id="@+id/action_zoom_minus"
+                    android:id="@+id/action_zoom_out"
                     android:title="@string/action_zoom_minus"
                     android:icon="@drawable/ic_zoom_out_black_24dp"
                     app:showAsAction="ifRoom"/>
@@ -68,7 +68,7 @@
                     android:checkable="true"
                     app:showAsAction="ifRoom"/>
                 <item
-                    android:id="@+id/action_suggestions"
+                    android:id="@+id/action_show_suggestions"
                     android:title="@string/action_suggestions"
                     android:icon="@drawable/ic_screen_share_black_24dp"
                     android:checkable="true"

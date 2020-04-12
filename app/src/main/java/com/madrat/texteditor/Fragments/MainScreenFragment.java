@@ -1,32 +1,40 @@
 package com.madrat.texteditor.Fragments;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.madrat.texteditor.R;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+import com.madrat.texteditor.databinding.FragmentMainScreenBinding;
 
 public class MainScreenFragment extends Fragment {
 
+    public static MainScreenFragment newInstance() {
+
+        Bundle args = new Bundle();
+
+        MainScreenFragment fragment = new MainScreenFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
+
     private static MainScreenFragment msf = new MainScreenFragment();
+
+    private FragmentMainScreenBinding binding;
 
     @NonNull
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main_screen, container, false);
-        return view;
+        binding = FragmentMainScreenBinding.inflate(inflater, container, false);
+        return binding.getRoot();
     }
-
-    public static MainScreenFragment newInstance() {
-        
-        Bundle args = new Bundle();
-        
-        MainScreenFragment fragment = new MainScreenFragment();
-        fragment.setArguments(args);
-        return fragment;
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

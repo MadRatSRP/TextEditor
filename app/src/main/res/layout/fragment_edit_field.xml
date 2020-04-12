@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.EditFieldFragment">
     <EditText
-        android:id="@+id/text"
+        android:id="@+id/setup_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
         android:inputType="textMultiLine" />
     <LinearLayout
-        android:id="@+id/toolbars"
+        android:id="@+id/toolbars_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
